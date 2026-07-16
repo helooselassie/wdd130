@@ -1,21 +1,18 @@
 /* CSS Variables - Week 03 Learning Activity */
 :root {
-    /* Color Palette */
-    --primary-color: #2c3e50;
-    --primary-hover: #1a252f;
-    --background-light: #f0f0f0;
-    --background-white: #fff;
-    --accent-blue: #d5e8f0;
-    --text-dark: #333;
-    --text-light: #fff;
-
-    /* Spacing */
-    --padding-standard: 1rem;
-    --margin-standard: 1rem auto;
-    --border-standard: 3px solid var(--primary-color);
-
-    /* Typography */
-    --font-family: Helvetica, Arial, sans-serif;
+    --river-deep: #0d2b3e;
+    --river-mid: #1a5276;
+    --river-light: #2e86c1;
+    --river-foam: #a9cce3;
+    --sand: #f5f0e8;
+    --white: #ffffff;
+    --text-body: #2c2c2c;
+    --font-display: 'Georgia', 'Times New Roman', serif;
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-nav: var(--font-body);
+    --gap-sm: 0.5rem;
+    --gap-md: 1rem;
+    --gap-lg: 2rem;
 }
 
 * {

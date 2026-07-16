@@ -7,7 +7,6 @@
     --river-mid: #1a5276;
     --river-light: #2e86c1;
     --river-foam: #a9cce3;
-    --stone: #d5cfc7;
     --sand: #f5f0e8;
     --white: #ffffff;
     --text-body: #2c2c2c;
@@ -17,8 +16,6 @@
     --gap-sm: 0.5rem;
     --gap-md: 1rem;
     --gap-lg: 2rem;
-    --max-width: 840px;
-    --border-accent: 3px solid var(--river-light);
 }
 
 * {
