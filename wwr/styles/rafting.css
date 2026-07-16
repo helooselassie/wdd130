@@ -1,296 +1,159 @@
-/* ============================================
-   Rapids & Rivers Rafting Co. — About Page CSS
-   rafting.css | WDD 130 | Selassie Kwabla Heloo
-   ============================================ */
-
-/* CSS Variables */
+/* CSS Variables - Dry Oar Rafting */
 :root {
-    /* Core Palette */
-    --river-deep: #0d2b3e;
-    /* darkest water — nav, footer */
-    --river-mid: #1a5276;
-    /* mid water — headings */
-    --river-light: #2e86c1;
-    /* bright water — accents */
-    --river-foam: #a9cce3;
-    /* foam/mist — subtle highlights */
-    --stone: #d5cfc7;
-    /* riverbed stone — borders */
-    --sand: #f5f0e8;
-    /* sun-bleached sand — page bg */
-    --bark: #6b4c2a;
-    /* driftwood — warm accent */
-    --white: #ffffff;
-    --text-body: #2c2c2c;
-
-    /* Typography */
-    --font-display: 'Georgia', 'Times New Roman', serif;
-    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-nav: var(--font-body);
-
-    /* Spacing */
-    --gap-sm: 0.5rem;
-    --gap-md: 1rem;
-    --gap-lg: 2rem;
-    --gap-xl: 3.5rem;
-
-    /* Layout */
-    --max-width: 840px;
-    --border-accent: 3px solid var(--river-light);
+    /* Color Palette */
+    --primary-color: #1a5276;
+    --secondary-color: #2874a6;
+    --accent1-color: #154360;
+    --accent2-color: #d4e6f1;
+    --heading-font: Georgia, "Times New Roman", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+    --text-light: #fff;
+    --text-dark: #333;
 }
 
-/* ---- Reset ---- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ---- Base ---- */
 body {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.7;
-    background-color: var(--sand);
-    color: var(--text-body);
-    max-width: var(--max-width);
+    font-family: var(--body-font);
+    color: var(--text-dark);
+}
+
+header,
+main,
+footer {
+    width: 840px;
     margin: 0 auto;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
-
-a {
-    color: var(--river-light);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ---- Header ---- */
 header {
-    background-color: var(--river-deep);
-    padding: var(--gap-md) var(--gap-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--gap-md);
+    padding: 1rem;
+    background-color: var(--accent2-color);
 }
 
-.logo {
-    height: 56px;
-    width: auto;
+header img {
+    width: 150px;
+    height: auto;
 }
 
-/* ---- Navigation ---- */
 nav {
     display: flex;
-    gap: var(--gap-sm);
-    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 nav a {
-    color: var(--river-foam);
-    font-family: var(--font-nav);
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.4rem 0.85rem;
-    border-radius: 2px;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-    background-color: var(--river-light);
-    color: var(--white);
-    text-decoration: none;
+nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 4px;
 }
 
-/* ---- Hero Section ---- */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Hero Section */
 .hero {
     position: relative;
-    min-height: 340px;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-    background-color: var(--river-deep);
 }
 
-.hero-bg {
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
     position: absolute;
-    inset: 0;
+    top: 20px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 40%;
-    opacity: 0.55;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    padding: var(--gap-lg);
-    width: 100%;
-}
-
-.hero-content h1 {
-    font-family: var(--font-display);
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 700;
-    color: var(--white);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
-    line-height: 1.2;
-    margin-bottom: var(--gap-sm);
-}
-
-.hero-tagline {
-    font-size: 1rem;
-    color: var(--river-foam);
-    letter-spacing: 0.04em;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
-}
-
-/* ---- Mission Article ---- */
-.mission {
-    padding: var(--gap-lg);
-    background-color: var(--white);
-    border-left: var(--border-accent);
-}
-
-.mission-inner {
-    display: flex;
-    gap: var(--gap-lg);
-    align-items: flex-start;
-}
-
-.mission-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--river-foam);
-    flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.mission h2 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--river-mid);
-    margin-bottom: var(--gap-sm);
-}
-
-.mission p {
-    color: var(--text-body);
-    margin-bottom: var(--gap-sm);
-}
-
-/* ---- Section Shared Styles ---- */
-.section-history,
-.section-adventure {
-    padding: var(--gap-lg);
-}
-
-.section-history {
-    background-color: var(--sand);
-    border-top: 2px solid var(--stone);
-    border-bottom: 2px solid var(--stone);
-}
-
-.section-history h2,
-.section-adventure h2 {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    color: var(--river-mid);
-    margin-bottom: var(--gap-md);
-    padding-bottom: var(--gap-sm);
-    border-bottom: 3px solid var(--river-foam);
-    display: inline-block;
-}
-
-.section-history p {
-    max-width: 620px;
-    color: var(--text-body);
-}
-
-/* ---- Adventure Section ---- */
-.section-adventure {
-    background-color: var(--white);
-}
-
-.adventure-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--gap-md);
-    margin-top: var(--gap-md);
-    min-height: 140px;
-}
-
-.adventure-placeholder {
-    background-color: var(--river-foam);
-    border: 2px dashed var(--river-light);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: var(--river-mid);
-    min-height: 120px;
-    opacity: 0.6;
-}
-
-/* ---- Footer ---- */
-footer {
-    background-color: var(--river-deep);
-    color: var(--river-foam);
-    padding: var(--gap-lg);
-    margin-top: var(--gap-lg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--gap-md);
+    padding: 16px;
     text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
+    color: var(--text-light);
+    font-size: 2.5rem;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 25px;
+    left: 15px;
+    background: radial-gradient(#eee, var(--accent1-color));
+    border: 1px solid #000;
+    padding: 1rem;
+    box-shadow: 0 0 30px #111;
+    opacity: 0.9;
+    max-width: 500px;
+    color: var(--text-light);
+}
+
+.hero article img {
+    float: right;
+    width: 125px;
+    margin: 0 0 0.5rem 0.5rem;
+    border: 2px solid var(--text-light);
+}
+
+/* Adventure Section */
+section h2 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+section img {
+    width: 150px;
+    height: auto;
+    margin: 0.5rem;
+    border: 3px solid var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--accent2-color);
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 3px solid var(--primary-color);
 }
 
 footer p {
-    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
 }
 
-.social-links {
+.socialmedia {
     display: flex;
-    gap: var(--gap-lg);
-    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
-.social-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--river-foam);
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.social-links a:hover {
-    color: var(--white);
+.socialmedia a {
     text-decoration: none;
 }
 
-.social-links img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(0.75);
-}
-
-.social-links a:hover img {
-    filter: brightness(0) invert(1);
+.socialmedia img {
+    width: 40px;
+    height: 40px;
 }
