@@ -63,15 +63,15 @@ header img {
     display: block;
 }
 
-/* ── Nav — CSS Flex: links horizontal, spaced evenly, centered ── */
-nav {
+/* ── Nav — CSS Flex: links horizontal, right-aligned, centered ── */
+header nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 0.25rem;
 }
 
-nav a {
+header nav a {
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -83,8 +83,8 @@ nav a {
     transition: background-color 0.2s, border-color 0.2s;
 }
 
-nav a:hover,
-nav a[href="about.html"] {
+header nav a:hover,
+header nav a[href="about.html"] {
     /* highlight current page */
     background-color: var(--rapids-mid);
     border-color: var(--rapids-foam);
@@ -252,7 +252,7 @@ footer {
 }
 
 footer p {
-    opacity: 0.85;
+    color: var(--text-light);
 }
 
 .socialmedia {
@@ -291,7 +291,7 @@ footer p {
         margin: 0 auto;
     }
 
-    nav {
+    header nav {
         justify-content: center;
         flex-wrap: wrap;
     }
