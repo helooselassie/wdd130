@@ -1,5 +1,6 @@
-/* CSS Variables - Week 03 Learning Activity */
+/* CSS Variables */
 :root {
+    /* Color palette */
     --river-deep: #0d2b3e;
     --river-mid: #1a5276;
     --river-light: #2e86c1;
@@ -7,109 +8,198 @@
     --sand: #f5f0e8;
     --white: #ffffff;
     --text-body: #2c2c2c;
+
+    /* Mapped semantic tokens (fixes undefined variables used throughout) */
+    --primary-color: var(--river-mid);
+    --primary-hover: var(--river-light);
+    --background-light: var(--sand);
+    --background-white: var(--white);
+    --accent-blue: var(--river-foam);
+    --text-dark: var(--text-body);
+    --text-light: var(--white);
+
+    /* Typography */
     --font-display: 'Georgia', 'Times New Roman', serif;
     --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-nav: var(--font-body);
+    --font-family: var(--font-body);
+    /* fixes undefined --font-family on body */
+
+    /* Spacing */
     --gap-sm: 0.5rem;
     --gap-md: 1rem;
     --gap-lg: 2rem;
+    --padding-standard: 1rem;
+    /* fixes undefined --padding-standard */
+    --border-standard: 2px solid var(--river-mid);
+    /* fixes undefined --border-standard */
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ── Body ── */
 body {
     font-family: var(--font-family);
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: var(--background-light);
     color: var(--text-dark);
 }
 
+/* ── Header / Nav ── */
+header,
+.grid,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
 nav {
     background-color: var(--primary-color);
-    padding: var(--padding-standard);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 nav a {
-    color: var(--text-light);
-    padding: 0.5rem 1rem;
     display: block;
+    padding: 0.5rem;
     text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    /* was: #fff;/% shorthand for white %/ — broken comment fixed */
 }
 
 nav a:hover {
     background-color: var(--primary-hover);
+    border-radius: 4px;
 }
 
+/* ── Main ── */
 main {
-    max-width: 800px;
-    margin: var(--margin-standard);
+    grid-column: 2 / 3;
+    margin: 1rem;
     padding: var(--padding-standard);
     background-color: var(--background-white);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 h1 {
+    font-family: var(--font-display);
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    border-bottom: 2px solid var(--river-light);
+    padding-bottom: 0.5rem;
 }
 
 main img {
     width: 200px;
     height: 200px;
+    object-fit: cover;
     border: var(--border-standard);
     padding: 4px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     float: right;
     margin: 0 0 1rem 1rem;
+    border-radius: 4px;
 }
 
 p {
-    padding: 0;
     line-height: 1.6;
     margin-bottom: 0.75rem;
 }
 
-/* Class Selectors */
+/* ── List / .box ── */
 .box {
     margin: 1rem;
-    border: 2px solid var(--primary-color);
+    border: var(--border-standard);
     padding: var(--padding-standard);
     background-color: var(--accent-blue);
     color: var(--primary-color);
+    border-radius: 4px;
 }
 
+.box a {
+    color: var(--river-deep);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.box a:hover {
+    text-decoration: underline;
+    color: var(--primary-hover);
+}
+
+ul.box {
+    padding-left: 2rem;
+    /* keep bullet indentation inside the box */
+    list-style: disc;
+}
+
+ul.box li {
+    margin-bottom: 0.4rem;
+}
+
+/* ── Aside ── */
 aside {
-    width: 280px;
-    margin: var(--margin-standard);
+    width: 20rem;
     position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: start;
+    margin: 1rem 0 1rem 1rem;
+    background-color: var(--background-white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 aside img {
-    width: 200px;
-    height: auto;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
     display: block;
-    margin: 0.5rem auto;
 }
 
 aside h2 {
     position: absolute;
-    top: 25px;
-    left: 15px;
-    background: radial-gradient(#eee, var(--primary-color));
-    border: 1px solid #000;
-    padding: 0.65rem;
-    box-shadow: 0 0 30px #111;
-    opacity: 0.9;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, var(--river-deep) 0%, var(--river-mid) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0.93;
     color: var(--text-light);
-    text-shadow: 0 0 15px #333;
-    border-bottom: 1px solid #555;
-    margin-bottom: 0.3rem;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    border-radius: 3px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
+aside p {
+    padding: var(--padding-standard);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ── Grid container (aside + main) ── */
+.grid {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    align-items: start;
+}
+
+/* ── Footer ── */
 footer {
     margin-top: 2rem;
     border-top: var(--border-standard);
@@ -117,4 +207,30 @@ footer {
     padding: var(--padding-standard);
     background-color: var(--primary-color);
     color: var(--text-light);
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+}
+
+/* ── Responsive: collapse to single column on narrow screens ── */
+@media (max-width: 680px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        width: 100%;
+        grid-column: 1 / -1;
+        grid-row: auto;
+        margin: 1rem 0 0;
+    }
+
+    main {
+        grid-column: 1 / -1;
+    }
+
+    main img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+    }
 }
