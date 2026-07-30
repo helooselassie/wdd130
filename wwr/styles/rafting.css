@@ -9,16 +9,26 @@
     --rapids-light: #3a9abf;
     --rapids-foam: #b8dde8;
     --sand: #f4f0e6;
-    --white: #ffffff;
+    --white: #fff;
     --text-dark: #1c1c1c;
-    --text-light: #ffffff;
+    --text-light: #fff;
     --text-muted: #4a5a63;
+    --accent: #333;
+    --border-light: #ccc;
+    --border-mid: #888;
+    --border-dark: #999;
+    --bg-light: #f0f0f0;
+    --bg-mid: #e8e8e8;
+    --bg-dark: #ddd;
+    --bg-hover: #d5d5d5;
+    --placeholder: #bbb;
+    --overlay: rgba(26, 46, 59, 0.6);
+    --overlay-light: rgba(26, 46, 59, 0.55);
 
-    --font-display: 'Georgia', 'Times New Roman', serif;
+    --font-display: Georgia, 'Times New Roman', serif;
     --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
     --max-width: 1100px;
-    --padding-std: 1rem;
     --radius: 6px;
 }
 
@@ -33,66 +43,71 @@
 
 /* ── Base ── */
 body {
-    font-family: var(--font-body);
-    background-color: var(--sand);
+    font: 1rem/1.6 var(--font-body);
+    background: var(--sand);
     color: var(--text-dark);
-    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 /* ============================================================
-   HEADER — shared across all pages
+   HEADER & NAV
    ============================================================ */
+header,
+footer,
+.hero,
+.history,
+.adventure,
+.page-contact main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
 header {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    background-color: var(--rapids-dark);
+    gap: 1rem;
+    background: var(--rapids-dark);
     padding: 0.75rem 2rem;
-    max-width: var(--max-width);
-    margin: 0 auto;
 }
 
 header img {
     height: 80px;
-    width: auto;
-    display: block;
 }
 
-/* ── Nav — shared across all pages ── */
 header nav {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     gap: 0.25rem;
 }
 
 header nav a {
-    display: block;
     padding: 0.5rem 1rem;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
+    font: 600 1rem var(--font-body);
     color: var(--text-light);
+    text-decoration: none;
     border: 2px solid transparent;
     border-radius: var(--radius);
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: 0.2s;
 }
 
 header nav a:hover,
 header nav a.current {
-    background-color: var(--rapids-mid);
+    background: var(--rapids-mid);
     border-color: var(--rapids-foam);
 }
 
 /* ============================================================
-   HERO SECTION — home / about pages
+   HERO
    ============================================================ */
 .hero {
     position: relative;
-    max-width: var(--max-width);
-    margin: 0 auto;
     text-align: center;
-    background-color: var(--white);
+    background: var(--white);
     overflow: hidden;
 }
 
@@ -100,7 +115,6 @@ header nav a.current {
     width: 100%;
     height: 420px;
     object-fit: cover;
-    display: block;
 }
 
 .hero h1 {
@@ -109,12 +123,10 @@ header nav a.current {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    font-family: var(--font-display);
-    font-size: 2.25rem;
-    color: var(--white);
-    text-align: center;
+    font: 2.25rem var(--font-display);
+    color: var(--text-light);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-    background-color: rgba(26, 46, 59, 0.55);
+    background: var(--overlay-light);
     padding: 0.6rem 1.5rem;
     border-radius: var(--radius);
 }
@@ -125,11 +137,10 @@ header nav a.current {
     left: 0;
     right: 0;
     display: flex;
-    align-items: flex-start;
     gap: 1.5rem;
     padding: 1rem 2rem 1.5rem;
     text-align: left;
-    background-color: rgba(26, 46, 59, 0.6);
+    background: var(--overlay);
 }
 
 .hero article p {
@@ -139,29 +150,24 @@ header nav a.current {
 }
 
 .hero article img {
-    float: right;
     width: 180px;
     height: 160px;
     object-fit: cover;
     border-radius: var(--radius);
-    flex-shrink: 0;
     border: 3px solid var(--rapids-foam);
 }
 
 /* ============================================================
-   HISTORY SECTION — about page
+   HISTORY
    ============================================================ */
 .history {
-    background-color: var(--rapids-dark);
+    background: var(--rapids-dark);
     color: var(--text-light);
     padding: 2.5rem 2rem;
-    max-width: var(--max-width);
-    margin: 0 auto;
 }
 
 .history h2 {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
+    font: 1.75rem var(--font-display);
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--rapids-foam);
@@ -187,22 +193,17 @@ header nav a.current {
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--rapids-light);
-    display: block;
 }
 
 /* ============================================================
-   ADVENTURE GALLERY — about / trips pages
+   ADVENTURE GALLERY
    ============================================================ */
 .adventure {
-    background-color: var(--sand);
-    padding: 2.5rem var(--padding-std);
-    max-width: var(--max-width);
-    margin: 0 auto;
+    padding: 2.5rem 1rem;
 }
 
 .adventure h2 {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
+    font: 1.75rem var(--font-display);
     text-align: center;
     color: var(--rapids-dark);
     margin-bottom: 1.5rem;
@@ -221,48 +222,39 @@ header nav a.current {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--white);
+    background: var(--white);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.adventure-gallery figure img {
+.adventure-gallery img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1;
     object-fit: cover;
-    display: block;
 }
 
 .adventure-gallery figcaption {
     padding: 0.5rem 0.25rem;
-    font-size: 0.8rem;
+    font: 600 0.8rem var(--font-body);
     color: var(--text-muted);
-    font-weight: 600;
     text-align: center;
-    line-height: 1.3;
 }
 
 /* ============================================================
-   CONTACT PAGE — prefixed with .contact-
+   CONTACT PAGE
    ============================================================ */
 .page-contact main {
-    max-width: var(--max-width);
-    margin: 0 auto;
     padding: 1.5rem 2rem;
 }
 
-/* ── Contact Info ── */
 .contact-info {
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 .contact-info h1 {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: normal;
-    color: var(--text-dark);
+    font: 1.6rem var(--font-display);
     margin-bottom: 0.25rem;
 }
 
@@ -272,7 +264,7 @@ header nav a.current {
 }
 
 .contact-info a {
-    color: var(--text-dark);
+    color: inherit;
     text-decoration: none;
 }
 
@@ -280,7 +272,7 @@ header nav a.current {
     text-decoration: underline;
 }
 
-/* ── Contact Layout: Map + Form ── */
+/* Map + Form */
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -292,11 +284,10 @@ header nav a.current {
 .contact-map iframe {
     width: 100%;
     height: 320px;
-    border: 1px solid #ccc;
-    display: block;
+    border: 1px solid var(--border-light);
 }
 
-/* ── Contact Form ── */
+/* Form */
 .contact-form form {
     display: flex;
     flex-direction: column;
@@ -311,23 +302,18 @@ header nav a.current {
 .contact-form-group > label:first-child {
     font-size: 0.85rem;
     margin-bottom: 0.25rem;
-    color: var(--text-dark);
 }
 
-.contact-form-group input[type="text"],
-.contact-form-group input[type="email"],
-.contact-form-group textarea {
+.contact-form-group :is(input[type="text"], input[type="email"], textarea) {
     padding: 0.5rem 0.6rem;
-    border: 1px solid #888;
+    border: 1px solid var(--border-mid);
     border-radius: 3px;
-    font-size: 0.9rem;
-    font-family: var(--font-body);
+    font: 0.9rem var(--font-body);
     width: 100%;
 }
 
-.contact-form-group input::placeholder,
-.contact-form-group textarea::placeholder {
-    color: #bbb;
+.contact-form-group ::placeholder {
+    color: var(--placeholder);
 }
 
 .contact-form-group textarea {
@@ -335,15 +321,15 @@ header nav a.current {
     min-height: 80px;
 }
 
-/* Radio buttons */
-.contact-radio-group {
+/* Radio & Checkbox */
+.contact-choice-group {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
     margin-top: 0.25rem;
 }
 
-.contact-radio-group label {
+.contact-choice-group label {
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -351,64 +337,40 @@ header nav a.current {
     cursor: pointer;
 }
 
-.contact-radio-group input[type="radio"] {
+.contact-choice-group input {
     width: 14px;
     height: 14px;
-    accent-color: #333;
+    accent-color: var(--accent);
     cursor: pointer;
 }
 
-/* Checkbox */
-.contact-checkbox-group {
-    margin-top: 0.25rem;
-}
-
-.contact-checkbox-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
-.contact-checkbox-group input[type="checkbox"] {
-    width: 14px;
-    height: 14px;
-    accent-color: #333;
-    cursor: pointer;
-}
-
-/* Submit Button */
+/* Submit */
 .contact-form button[type="submit"] {
     padding: 0.6rem 1rem;
-    background-color: #e8e8e8;
+    background: var(--bg-mid);
     color: var(--text-dark);
-    border: 1px solid #888;
+    border: 1px solid var(--border-mid);
     border-radius: 3px;
-    font-size: 0.9rem;
-    font-family: var(--font-body);
+    font: 0.9rem var(--font-body);
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.2s;
+    transition: 0.2s;
 }
 
 .contact-form button[type="submit"]:hover {
-    background-color: #d5d5d5;
+    background: var(--bg-hover);
 }
 
-/* ── Employees Section ── */
+/* Employees */
 .contact-employees {
-    background-color: #f0f0f0;
-    border: 2px solid #999;
+    background: var(--bg-light);
+    border: 2px solid var(--border-dark);
     padding: 1.25rem 2rem;
     text-align: center;
 }
 
 .contact-employees h2 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--text-dark);
+    font: bold 1.4rem var(--font-display);
     margin-bottom: 1rem;
 }
 
@@ -419,54 +381,40 @@ header nav a.current {
     justify-items: center;
 }
 
-.contact-employee-grid figure {
-    text-align: center;
-}
-
 .contact-employee-grid img {
     width: 100px;
     height: 80px;
     object-fit: cover;
-    background-color: #ddd;
-    display: block;
+    background: var(--bg-dark);
     margin: 0 auto;
 }
 
 .contact-employee-grid figcaption {
     font-size: 0.8rem;
     margin-top: 0.4rem;
-    color: var(--text-dark);
 }
 
 /* ============================================================
-   FOOTER — shared across all pages
+   FOOTER
    ============================================================ */
 footer {
-    background-color: var(--rapids-dark);
-    color: var(--text-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding-std) 2rem;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    font-size: 0.9rem;
-}
-
-footer p {
+    background: var(--rapids-dark);
     color: var(--text-light);
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
 }
 
 .socialmedia {
     display: flex;
     gap: 0.75rem;
-    align-items: center;
 }
 
 .socialmedia a {
-    display: block;
     opacity: 0.8;
-    transition: opacity 0.2s;
+    transition: 0.2s;
 }
 
 .socialmedia a:hover {
@@ -476,20 +424,30 @@ footer p {
 .socialmedia img {
     width: 32px;
     height: 32px;
-    display: block;
 }
 
 /* ============================================================
-   RESPONSIVE — collapse below 768px
+   RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
-    header {
+
+    header,
+    .history-grid,
+    .hero article,
+    .contact-layout,
+    .contact-employee-grid,
+    footer {
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 0.75rem;
     }
 
-    header img {
+    header,
+    .history-grid,
+    footer {
+        text-align: center;
+    }
+
+    header img,
+    .history-grid img {
         margin: 0 auto;
     }
 
@@ -499,8 +457,8 @@ footer p {
     }
 
     .hero h1 {
-        margin: 0 0.5rem 1rem;
         font-size: 1.6rem;
+        margin: 0 0.5rem 1rem;
     }
 
     .hero article {
@@ -513,15 +471,6 @@ footer p {
         height: 200px;
     }
 
-    .history-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .history-grid img {
-        margin: 0 auto;
-    }
-
     .adventure-gallery {
         flex-wrap: wrap;
     }
@@ -530,17 +479,7 @@ footer p {
         flex: 1 1 calc(50% - 0.5rem);
     }
 
-    .contact-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-employee-grid {
-        grid-template-columns: 1fr;
-    }
-
     footer {
-        flex-direction: column;
         gap: 1rem;
-        text-align: center;
     }
 }
