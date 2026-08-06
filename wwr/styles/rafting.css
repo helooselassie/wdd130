@@ -483,3 +483,612 @@ footer {
         gap: 1rem;
     }
 }
+
+/* ── Trips-page styles ── */
+
+/* CTA Banner */
+.cta-banner {
+    background: linear-gradient(135deg, #1a3a2a 0%, #0d5c3a 60%, #1a6b47 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/rafting2.jpg") center/cover no-repeat;
+    opacity: 0.18;
+}
+
+.cta-banner > * {
+    position: relative;
+}
+
+.cta-banner h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin: 0 0 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.cta-banner p {
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    opacity: 0.92;
+}
+
+.cta-banner a.btn {
+    display: inline-block;
+    background: #e8a020;
+    color: #0d1f16;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 2.2rem;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.cta-banner a.btn:hover {
+    background: #f5b830;
+    transform: translateY(-2px);
+}
+
+/* ── Trip Cards ── */
+.trips-section {
+    padding: 3.5rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.trips-section h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: #0d5c3a;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* Grid: two columns on wider screens, one on narrow */
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.trip-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.trip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.trip-card-body {
+    padding: 1.4rem 1.5rem 1.6rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-card-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+}
+
+.badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
+
+.badge-level-beginner {
+    background: #d4edda;
+    color: #1a5c2a;
+}
+
+.badge-level-intermediate {
+    background: #fff3cd;
+    color: #7a5500;
+}
+
+.badge-level-advanced {
+    background: #f8d7da;
+    color: #7a1a1a;
+}
+
+.badge-duration {
+    background: #e8f0fe;
+    color: #1a3a7a;
+}
+
+.trip-card h3 {
+    font-size: 1.25rem;
+    color: #0d1f16;
+    margin: 0 0 0.6rem;
+}
+
+.trip-card p {
+    font-size: 0.95rem;
+    color: #3d5048;
+    line-height: 1.65;
+    margin: 0 0 1rem;
+    flex: 1;
+}
+
+.trip-card .highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem;
+}
+
+.trip-card .highlights li {
+    font-size: 0.88rem;
+    color: #3d5048;
+    padding: 0.2rem 0;
+}
+
+.trip-card .highlights li::before {
+    content: "✓ ";
+    color: #0d5c3a;
+    font-weight: 700;
+}
+
+.trip-card .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d5c3a;
+}
+
+/* ── Comparison Table ── */
+.table-section {
+    background: #f4f8f5;
+    padding: 3.5rem 1.5rem;
+}
+
+.table-section h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: #0d5c3a;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.09);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 0.93rem;
+}
+
+thead {
+    background: #0d5c3a;
+    color: #fff;
+}
+
+thead th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+    background: #f0f6f2;
+}
+
+tbody tr:hover {
+    background: #ddeee5;
+    transition: background 0.15s;
+}
+
+tbody td {
+    padding: 0.85rem 1.2rem;
+    color: #2a3d30;
+    border-bottom: 1px solid #e0ebe4;
+    vertical-align: middle;
+}
+
+tbody td:first-child {
+    font-weight: 600;
+}
+
+.level-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+}
+
+.pill-beginner {
+    background: #d4edda;
+    color: #1a5c2a;
+}
+
+.pill-intermediate {
+    background: #fff3cd;
+    color: #7a5500;
+}
+
+.pill-advanced {
+    background: #f8d7da;
+    color: #7a1a1a;
+}
+
+/* ============================================================
+   HOME PAGE  (index.html)
+   ============================================================ */
+
+/* Make header & footer span full viewport width on home page */
+.page-home header,
+.page-home footer {
+    max-width: 100%;
+}
+
+/* ── Split Hero ── */
+.split-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 82px);
+    width: 100%;
+}
+
+.split-hero__image {
+    position: relative;
+    overflow: hidden;
+}
+
+.split-hero__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 8s ease;
+}
+
+.split-hero__image:hover img {
+    transform: scale(1.04);
+}
+
+.split-hero__image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--rapids-light);
+}
+
+.split-hero__content {
+    background: var(--rapids-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3.5rem 4rem 4rem;
+}
+
+.split-hero__eyebrow {
+    font: 0.72rem/1 var(--font-body);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rapids-light);
+    margin-bottom: 1.2rem;
+}
+
+.split-hero__headline {
+    font: normal clamp(2rem, 3.5vw, 3.2rem)/1.12 var(--font-display);
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.split-hero__headline em {
+    font-style: italic;
+    color: var(--rapids-foam);
+}
+
+.split-hero__body {
+    font: 0.97rem/1.72 var(--font-body);
+    color: var(--rapids-foam);
+    opacity: 0.85;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--rapids-light);
+    color: var(--text-light);
+    font: 700 0.88rem/1 var(--font-body);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+    background: var(--rapids-mid);
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    display: inline-block;
+    border: 1.5px solid var(--rapids-mid);
+    color: var(--rapids-foam);
+    font: 0.88rem/1 var(--font-body);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover {
+    border-color: var(--rapids-foam);
+    color: var(--text-light);
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--sand);
+    border-top: 4px solid var(--rapids-light);
+    width: 100%;
+}
+
+.stat {
+    padding: 2.2rem 1.5rem;
+    text-align: center;
+    border-right: 1px solid var(--border-light);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat__number {
+    display: block;
+    font: normal clamp(2rem, 4vw, 3rem)/1 var(--font-display);
+    color: var(--rapids-mid);
+    margin-bottom: 0.35rem;
+}
+
+.stat__label {
+    font: 0.78rem/1 var(--font-body);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* ── Brand / Story Strip ── */
+.brand-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.brand-strip__text {
+    padding: 4.5rem 4rem 4.5rem 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+}
+
+.brand-strip__text h2 {
+    font: normal clamp(1.6rem, 2.8vw, 2.4rem)/1.2 var(--font-display);
+    color: var(--rapids-dark);
+    margin-bottom: 1.2rem;
+}
+
+.brand-strip__text p {
+    font: 0.95rem/1.75 var(--font-body);
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 1rem;
+}
+
+.brand-strip__text .story-link {
+    font: 700 0.85rem/1 var(--font-body);
+    color: var(--rapids-mid);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--rapids-light);
+    padding-bottom: 1px;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+}
+
+.brand-strip__text .story-link:hover {
+    color: var(--rapids-dark);
+}
+
+.brand-strip__image {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.brand-strip__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ── Final CTA ── */
+.final-cta {
+    background: var(--rapids-mid);
+    color: var(--text-light);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.final-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../images/rafting3.jpg") center/cover no-repeat;
+    opacity: 0.12;
+}
+
+.final-cta > * {
+    position: relative;
+}
+
+.final-cta h2 {
+    font: normal clamp(1.8rem, 4vw, 3rem)/1.15 var(--font-display);
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.final-cta p {
+    font: 1rem/1.7 var(--font-body);
+    color: var(--rapids-foam);
+    max-width: 520px;
+    margin: 0 auto 2.2rem;
+}
+
+.final-cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn-white {
+    display: inline-block;
+    background: var(--white);
+    color: var(--rapids-dark);
+    font: 700 0.88rem/1 var(--font-body);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-white:hover {
+    background: var(--rapids-foam);
+    transform: translateY(-2px);
+}
+
+.btn-ghost-light {
+    display: inline-block;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    color: var(--rapids-foam);
+    font: 0.88rem/1 var(--font-body);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost-light:hover {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+/* ── Home Responsive ── */
+@media (max-width: 800px) {
+    .split-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .split-hero__image {
+        height: 52vw;
+        min-height: 240px;
+        position: relative;
+    }
+
+    .split-hero__image::after {
+        display: none;
+    }
+
+    .split-hero__content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .stats-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .brand-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-strip__image {
+        min-height: 260px;
+    }
+
+    .brand-strip__text {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .split-hero__image img {
+        transition: none;
+    }
+}
