@@ -952,17 +952,96 @@ tbody td:first-child {
 }
 
 .brand-strip__image {
-    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
     min-height: 420px;
     overflow: hidden;
 }
 
 .brand-strip__image img {
-    position: absolute;
-    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ── Newsletter ── */
+.newsletter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    background: var(--sand);
+    padding: 4rem 4rem;
+    width: 100%;
+}
+
+.newsletter__text h2 {
+    font: normal clamp(1.6rem, 2.8vw, 2.4rem)/1.2 var(--font-display);
+    color: var(--rapids-dark);
+    margin-bottom: 0.9rem;
+}
+
+.newsletter__text p {
+    font: 0.95rem/1.7 var(--font-body);
+    color: var(--text-muted);
+    max-width: 420px;
+}
+
+.newsletter__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: end;
+}
+
+.newsletter-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-form-group label {
+    font: 600 0.8rem var(--font-body);
+    color: var(--rapids-dark);
+    margin-bottom: 0.35rem;
+}
+
+.newsletter-form-group input {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border-mid);
+    border-radius: 3px;
+    font: 0.9rem var(--font-body);
+    width: 100%;
+}
+
+.newsletter__form button {
+    grid-column: 1 / -1;
+    padding: 0.8rem 1rem;
+    background: var(--rapids-light);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--radius);
+    font: 700 0.85rem/1 var(--font-body);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.newsletter__form button:hover {
+    background: var(--rapids-mid);
+}
+
+@media (max-width: 800px) {
+    .newsletter {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .newsletter__form {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ── Final CTA ── */
